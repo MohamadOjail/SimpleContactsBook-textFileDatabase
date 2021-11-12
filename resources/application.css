@@ -25,6 +25,6 @@
 	-fx-background-image: url(icons/about.png);
 }
 
-.table-view{
-	-fx-padding: 0.0em;
+.table-view .table-column{
+	-fx-alignment: CENTER;
 }

@@ -33,13 +33,13 @@
             <Insets left="20.0" />
          </padding>
       </HBox>
-      <TableView layoutX="15.0" layoutY="109.0" prefHeight="465.0" prefWidth="636.0" styleClass="root" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="109.0">
+      <TableView fx:id="contactTable" layoutX="15.0" layoutY="109.0" prefHeight="465.0" prefWidth="636.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="109.0">
         <columns>
-          <TableColumn maxWidth="2000.0" prefWidth="65.0" text="ID" />
-          <TableColumn prefWidth="150.0" text="First Name" />
-            <TableColumn prefWidth="150.0" text="Last Name" />
-            <TableColumn prefWidth="150.0" text="Tel number" />
-            <TableColumn prefWidth="120.0" text="Date of Birth" />
+          <TableColumn fx:id="idCol" maxWidth="2000.0" prefWidth="65.0" text="ID" />
+          <TableColumn fx:id="fNameCol" prefWidth="150.0" text="First Name" />
+            <TableColumn fx:id="lNameCol" prefWidth="150.0" text="Last Name" />
+            <TableColumn fx:id="telCol" prefWidth="150.0" text="Tel number" />
+            <TableColumn fx:id="dateCol" prefWidth="120.0" text="Date of Birth" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
