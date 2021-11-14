@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -12,12 +13,14 @@ import javafx.scene.control.Alert.AlertType;
 import ojail.mohamad.contactbook.model.PersonModel;
 
 public class DataReader {
-	
+
 	File path = new File("data.txt");
+	DataWriter writer = new DataWriter();
 
 	public ObservableList<PersonModel> getData() {
 		ObservableList<PersonModel> output = FXCollections.observableArrayList();
 		try {
+			if(!path.exists()) writer.createDefault();
 			if(path.exists()) output.clear();
 			BufferedReader br = new BufferedReader(new FileReader(path));
 			String line = "";
@@ -37,11 +40,17 @@ public class DataReader {
 			alert.setTitle(e.getClass().getSimpleName());
 			alert.setHeaderText(e.getMessage());
 			alert.showAndWait();
+		}catch (Exception e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle(e.getClass().getSimpleName());
+			alert.setHeaderText(e.getMessage());
+			alert.setContentText("invalid data file");
+			alert.showAndWait();
 		}
-		
-		return null;
+		output.clear();
+		return output;
 	}
-	
+
 	//buffer.append(sc.nextLine()+System.lineSeparator());
-	
+
 }

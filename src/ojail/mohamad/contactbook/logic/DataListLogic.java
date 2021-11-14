@@ -1,19 +1,27 @@
 package ojail.mohamad.contactbook.logic;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import ojail.mohamad.contactbook.model.PersonModel;
 
 public class DataListLogic {
-	
-	DataReader reader = new DataReader();
-	
-	ObservableList<PersonModel> list = FXCollections.observableArrayList();
+
+	private DataReader reader = new DataReader();
+	private DataWriter writer = new DataWriter();
+
+	private ObservableList<PersonModel> list = FXCollections.observableArrayList();
+
 	public void populateList() {
 		list = reader.getData();
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getFirstName() + list.get(i).getLastName());
-		}
+		if(list.isEmpty()) writer.createDefault();
+		list.addListener(new InvalidationListener() {
+			@Override
+			public void invalidated(Observable arg0) {
+				writer.writeFile(list);
+			}
+		});
 	}
 	public ObservableList<PersonModel> getList() {
 		return list;

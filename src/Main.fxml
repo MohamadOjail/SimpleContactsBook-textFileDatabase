@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../resources/application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ojail.mohamad.contactbook.controllers.MainController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../resources/application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ojail.mohamad.contactbook.controllers.MainController">
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
    </padding>
@@ -47,10 +47,10 @@
       </TableView>
       <VBox alignment="CENTER" layoutX="667.0" layoutY="102.0" prefHeight="478.0" prefWidth="115.0" spacing="20.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showAddDialog" prefHeight="100.0" prefWidth="100.0" styleClass="addBtn" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showEdit" prefHeight="100.0" prefWidth="100.0" styleClass="editBtn" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="100.0" prefWidth="100.0" styleClass="addBtn" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#edit" prefHeight="100.0" prefWidth="100.0" styleClass="editBtn" textAlignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#delete" prefHeight="100.0" prefWidth="100.0" styleClass="removeBtn" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showAbout" prefHeight="100.0" prefWidth="100.0" styleClass="aboutBtn" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#about" prefHeight="100.0" prefWidth="100.0" styleClass="aboutBtn" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font></Button>
