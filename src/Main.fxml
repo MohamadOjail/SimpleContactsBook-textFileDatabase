@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../resources/application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ojail.mohamad.contactbook.controllers.MainController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ojail.mohamad.contactbook.controllers.MainController">
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
    </padding>
@@ -28,6 +28,14 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="118.0">
+               <children>
+                  <Button fx:id="themeBtn" mnemonicParsing="false" onAction="#setTheme" prefHeight="25.0" prefWidth="95.0" text="change theme" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
          </children>
          <padding>
             <Insets left="20.0" />

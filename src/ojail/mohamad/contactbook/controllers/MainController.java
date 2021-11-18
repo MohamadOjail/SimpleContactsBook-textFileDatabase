@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
@@ -19,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import ojail.mohamad.contactbook.logic.DataListLogic;
 import ojail.mohamad.contactbook.model.PersonModel;
+import ojail.mohamad.contactbook.preferencesLogic.Preferences;
+import ojail.mohamad.contactbook.preferencesLogic.SaveLoadPreferences;
 
 public class MainController {
 
@@ -26,6 +29,7 @@ public class MainController {
 	private ObservableList<PersonModel> list;
 	@FXML private HBox titlePane;
     @FXML private AnchorPane mainPane;
+    @FXML private Button themeBtn;
 	@FXML private TableView<PersonModel> contactTable;
 	@FXML private TableColumn<PersonModel, LocalDate> dateCol;
 	@FXML private TableColumn<PersonModel, String> fNameCol;
@@ -127,6 +131,24 @@ public class MainController {
 			alert.showAndWait();
 		}
     }
+    
+    @FXML
+    void setTheme(ActionEvent event) {
+    	SaveLoadPreferences saveLoadPreferences = new SaveLoadPreferences();
+		this.mainPane.getStylesheets().clear();
+		Preferences preferences = saveLoadPreferences.loadPreferences();
+		boolean x = preferences.getTheme() == 0 ? true : false;
+		if(x) {
+			preferences.setTheme(1);
+			this.mainPane.getStylesheets().add(preferences.getCssFilePath());
+			x = false;
+		}else {
+			preferences.setTheme(0);
+			this.mainPane.getStylesheets().add(preferences.getCssFilePath());
+			x = true;
+		}
+		saveLoadPreferences.savePreferences(preferences);
+    }
 
 	@FXML private void initialize() throws IOException {
 		dataListLogic.populateList();
@@ -137,5 +159,6 @@ public class MainController {
 		fNameCol.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
 		lNameCol.setCellValueFactory(new PropertyValueFactory<>("LastName"));
 		telCol.setCellValueFactory(new PropertyValueFactory<>("TelNumber"));
+		this.themeBtn.setFocusTraversable(false);
 	}
 }

@@ -1,0 +1,35 @@
+.root{
+	-fx-effect: dropshadow( three-pass-box , black , 4 , 0 , 1 , 1 );
+	-fx-background-color: blue;
+}
+
+.button{
+	-fx-background-repeat: no-repeat;
+	-fx-effect: dropshadow( three-pass-box , black , 4 , 0 , 1 , 1 );
+	-fx-background-position: center;
+	-fx-background-size: 50;
+}
+
+.addBtn{
+	-fx-background-image: url(icons/add.png);
+}
+
+.removeBtn{
+	-fx-background-image: url(icons/remove.png);
+}
+
+.editBtn{
+	-fx-background-image: url(icons/edit.png);
+}
+
+.aboutBtn{
+	-fx-background-image: url(icons/about.png);
+}
+
+.table-view .table-column{
+	-fx-alignment: CENTER;
+}
+
+.dialog-pane{
+	-fx-background-color: blue;
+}

@@ -6,11 +6,16 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import ojail.mohamad.contactbook.model.PersonModel;
+import ojail.mohamad.contactbook.preferencesLogic.Preferences;
+import ojail.mohamad.contactbook.preferencesLogic.SaveLoadPreferences;
 
 public class AddController {
+
+    @FXML private DialogPane addPane;
 
 	public void setList(ObservableList<PersonModel> list) {
 		this.list = list;
@@ -43,5 +48,10 @@ public class AddController {
 	        	firstNameField.requestFocus();
 	        }
 	    });
+		
+		SaveLoadPreferences saveLoadPreferences = new SaveLoadPreferences();
+		this.addPane.getStylesheets().clear();
+		Preferences preferences = saveLoadPreferences.loadPreferences();
+		this.addPane.getStylesheets().add(preferences.getCssFilePath());
 	}
 }
