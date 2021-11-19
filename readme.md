@@ -37,4 +37,4 @@ the process of producing the solution will interduce many difficulties and findi
 - dealing with exceptions.
 
 ## Demo:
-![](/resources/pix/demo.gif)
+![](/src/resources/pix/demo.gif)
