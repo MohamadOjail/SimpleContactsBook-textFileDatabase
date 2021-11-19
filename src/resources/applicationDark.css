@@ -1,35 +1,165 @@
+*{
+	mainBackgroundColor: linear-gradient(to top, #151515, #202020);
+	secondaryBackgroundColor: linear-gradient(to top, #354A5F, #5B7B9B);
+	textColor:#CACACA;
+}
+
+.label{
+	-fx-text-fill:textColor;
+}
+
+.text-field{
+	-fx-text-fill:textColor;
+	-fx-background-color: #2E2E2E;
+}
+
 .root{
 	-fx-effect: dropshadow( three-pass-box , black , 4 , 0 , 1 , 1 );
-	-fx-background-color: blue;
+	-fx-background-color: mainBackgroundColor;
+	-fx-text-fill:textColor;
+}
+
+HBox{
+	-fx-background-color: secondaryBackgroundColor;
+}
+VBox{
+	-fx-background-color: secondaryBackgroundColor;
 }
 
 .button{
+	-fx-text-fill:textColor;
+	-fx-background-color: linear-gradient(to top, #161616, #25292C);
 	-fx-background-repeat: no-repeat;
-	-fx-effect: dropshadow( three-pass-box , black , 4 , 0 , 1 , 1 );
+	-fx-effect: dropshadow( three-pass-box , textColor , 4 , 0 , 1 , 1 );
 	-fx-background-position: center;
-	-fx-background-size: 50;
+	-fx-background-size: 36;
+}
+
+.button:hover{
+	-fx-background-color: #494948;
+}
+.button:pressed{
+	-fx-background-color: #54523C;
 }
 
 .addBtn{
-	-fx-background-image: url(icons/add.png);
+	-fx-background-image: url(icons/add-light.png);
 }
 
 .removeBtn{
-	-fx-background-image: url(icons/remove.png);
+	-fx-background-image: url(icons/remove-light.png);
 }
 
 .editBtn{
-	-fx-background-image: url(icons/edit.png);
+	-fx-background-image: url(icons/edit-light.png);
 }
 
 .aboutBtn{
-	-fx-background-image: url(icons/about.png);
+	-fx-background-image: url(icons/about-light.png);
 }
 
 .table-view .table-column{
 	-fx-alignment: CENTER;
 }
 
-.dialog-pane{
-	-fx-background-color: blue;
+.image-view{
+	-fx-image: url(icons/logo-light.png);
+}
+
+
+
+ .dialog-pane{
+ 	-fx-background-color: mainBackgroundColor;
+ }
+
+/**Costumization of The Bar where the buttons are located**/
+ .dialog-pane > *.button-bar > *.container {
+  -fx-background-color: mainBackgroundColor;
+}
+
+.dialog-pane > .content.label {
+   -fx-padding: 0.5em 0.5em 0.5em 0.5em;
+   -fx-background-color: yellow;
+   -fx-text-fill:black;
+   -fx-font-size:15.0px;
+}
+
+/**Costumization of DialogPane Header**/
+.dialog-pane:header .header-panel {
+  -fx-background-color: secondaryBackgroundColor;
+}
+
+.dialog-pane:header .header-panel .label{
+  -fx-background-color: yellow;
+  -fx-background-radius:10px;
+  -fx-text-fill:black;
+  -fx-font-size:15.0px;
+}
+
+
+/**Costumization of Buttons**/
+.dialog-pane .button{
+   -fx-background-color:black;
+   -fx-text-fill:white;
+   -fx-wrap-text: true;
+   -fx-effect: dropshadow( three-pass-box, yellow, 10.0, 0.0, 0.0, 0.0);
+   -fx-cursor:hand;
+ }
+
+.dialog-pane .button:hover{     
+  -fx-background-color:white;
+  -fx-text-fill:black;
+  -fx-font-weight:bold; 
+ }
+ .dialog-pane .button:pressed{     
+  -fx-background-color:lightgreen;
+  -fx-text-fill:black;
+  -fx-font-weight:bold; 
+ }
+ 
+ 
+ 
+ .table-view {
+    -fx-background-color: transparent;
+}
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color:#353638;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+
+    -fx-background-color: #3e3f41;
+    -fx-table-cell-border-color: #2d2e30;
+
+    /*-fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #353638;
+    -fx-table-cell-border-color: transparent;
+    /*-fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+.table-row-cell:selected{
+    -fx-background-color: #5f9093;
+}
+
+.table-view .table-column{
+    -fx-alignment: CENTER;
 }

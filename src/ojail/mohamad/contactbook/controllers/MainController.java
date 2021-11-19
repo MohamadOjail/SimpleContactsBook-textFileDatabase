@@ -36,6 +36,8 @@ public class MainController {
 	@FXML private TableColumn<PersonModel, Integer> idCol;
 	@FXML private TableColumn<PersonModel, String> lNameCol;
 	@FXML private TableColumn<PersonModel, String> telCol;
+	SaveLoadPreferences saveLoadPreferences;
+	Preferences preferences;
 
 	// Add new Contact Dialog
     @FXML void add(ActionEvent event) {
@@ -46,6 +48,11 @@ public class MainController {
 			dialog.getDialogPane().setContent(fxmlLoader.load());
 			dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
 			dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+			
+			loadPreferences();
+			dialog.getDialogPane().getStylesheets().clear();
+			dialog.getDialogPane().getStylesheets().add(preferences.getCssFilePath());
+			
 			AddController addPaneController = fxmlLoader.getController();
 			Optional<ButtonType> result = dialog.showAndWait();
 			if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -70,6 +77,11 @@ public class MainController {
 				dialog.getDialogPane().setContent(fxmlLoader.load());
 				dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
 				dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+				
+				loadPreferences();
+				dialog.getDialogPane().getStylesheets().clear();
+				dialog.getDialogPane().getStylesheets().add(preferences.getCssFilePath());
+				
 				EditController editController = fxmlLoader.getController();
 				editController.setModel(contactTable.getSelectionModel().getSelectedItem(), dataListLogic.getList());
 				Optional<ButtonType> result = dialog.showAndWait();
@@ -98,7 +110,12 @@ public class MainController {
     	if(contactTable.getSelectionModel().getSelectedItem() != null) {
     		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     		DialogPane dialogPane = alert.getDialogPane();
-    		dialogPane.setStyle("-fx-font-size: 18");
+    		//dialogPane.setStyle("-fx-font-size: 18");
+    		
+    		loadPreferences();
+    		dialogPane.getStylesheets().clear();
+    		dialogPane.getStylesheets().add(preferences.getCssFilePath());
+			
 			alert.setHeaderText("You cannot undo this, delete contact?");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -122,6 +139,11 @@ public class MainController {
 			fxmlLoader.setLocation(getClass().getResource("/About.fxml"));
 			dialog.getDialogPane().setContent(fxmlLoader.load());
 			dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+			
+			loadPreferences();
+			dialog.getDialogPane().getStylesheets().clear();
+			dialog.getDialogPane().getStylesheets().add(preferences.getCssFilePath());
+			
 			dialog.showAndWait();
 		} catch (Exception e) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -160,5 +182,11 @@ public class MainController {
 		lNameCol.setCellValueFactory(new PropertyValueFactory<>("LastName"));
 		telCol.setCellValueFactory(new PropertyValueFactory<>("TelNumber"));
 		this.themeBtn.setFocusTraversable(false);
+		//this.contactTable.setFocusTraversable(false);
+	}
+	
+	private void loadPreferences() {
+		saveLoadPreferences = new SaveLoadPreferences();
+		preferences = saveLoadPreferences.loadPreferences();
 	}
 }

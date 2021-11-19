@@ -25,6 +25,7 @@ the process of producing the solution will interduce many difficulties and findi
 - Using ObservableList and it's Event listener.
 
 ### Other Techniques learned:
+- Saving settings into a file; using serializable objects.
 - Using special char to purposely use a string:
 `1|First Name;Last Name:2021-11-01.123456`
 - Calling a hyperlink in the user default web browser.

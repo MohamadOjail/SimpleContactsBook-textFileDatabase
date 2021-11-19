@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -17,18 +16,15 @@
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
    </padding>
    <children>
-      <HBox fx:id="titlePane" alignment="CENTER_LEFT" layoutX="171.0" layoutY="14.0" prefHeight="65.0" spacing="30.0" styleClass="root" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+      <HBox fx:id="titlePane" alignment="CENTER_LEFT" layoutX="171.0" layoutY="14.0" prefHeight="65.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/icons/logo.png" />
-               </image></ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
             <Label text="Simple Contact book application with text file database">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="118.0">
+            <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="118.0" HBox.hgrow="ALWAYS">
                <children>
                   <Button fx:id="themeBtn" mnemonicParsing="false" onAction="#setTheme" prefHeight="25.0" prefWidth="95.0" text="change theme" />
                </children>
@@ -41,7 +37,7 @@
             <Insets left="20.0" />
          </padding>
       </HBox>
-      <TableView fx:id="contactTable" layoutX="15.0" layoutY="109.0" prefHeight="465.0" prefWidth="636.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="109.0">
+      <TableView fx:id="contactTable" layoutX="15.0" layoutY="95.0" prefHeight="465.0" prefWidth="636.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="80.0">
         <columns>
           <TableColumn fx:id="idCol" maxWidth="2000.0" prefWidth="65.0" text="ID" />
           <TableColumn fx:id="fNameCol" prefWidth="150.0" text="First Name" />
@@ -53,7 +49,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <VBox alignment="CENTER" layoutX="667.0" layoutY="102.0" prefHeight="478.0" prefWidth="115.0" spacing="20.0" AnchorPane.rightAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="667.0" layoutY="95.0" prefHeight="490.0" prefWidth="125.0" spacing="20.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="100.0" prefWidth="100.0" styleClass="addBtn" textAlignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#edit" prefHeight="100.0" prefWidth="100.0" styleClass="editBtn" textAlignment="CENTER" />

@@ -48,10 +48,5 @@ public class AddController {
 	        	firstNameField.requestFocus();
 	        }
 	    });
-		
-		SaveLoadPreferences saveLoadPreferences = new SaveLoadPreferences();
-		this.addPane.getStylesheets().clear();
-		Preferences preferences = saveLoadPreferences.loadPreferences();
-		this.addPane.getStylesheets().add(preferences.getCssFilePath());
 	}
 }

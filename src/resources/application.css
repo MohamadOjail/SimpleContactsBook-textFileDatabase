@@ -1,12 +1,40 @@
+*{
+	mainBackgroundColor: linear-gradient(to top, #C6C6C6, #EFEFEF);
+	secondaryBackgroundColor: linear-gradient(to top, #C0D2E8, #DAE4F1);
+	textColor:black;
+}
+
+.label{
+	-fx-text-fill:black;
+}
+
 .root{
 	-fx-effect: dropshadow( three-pass-box , black , 4 , 0 , 1 , 1 );
+	-fx-background-color: mainBackgroundColor;
+	-fx-text-fill:textColor;
+}
+
+HBox{
+	-fx-background-color: secondaryBackgroundColor;
+}
+VBox{
+	-fx-background-color: secondaryBackgroundColor;
 }
 
 .button{
+	-fx-text-fill:textColor;
+	-fx-background-color: mainBackgroundColor;
 	-fx-background-repeat: no-repeat;
-	-fx-effect: dropshadow( three-pass-box , black , 4 , 0 , 1 , 1 );
+	-fx-effect: dropshadow( three-pass-box , textColor , 4 , 0 , 1 , 1 );
 	-fx-background-position: center;
-	-fx-background-size: 50;
+	-fx-background-size: 36;
+}
+
+.button:hover{
+	-fx-background-color: lightyellow;
+}
+.button:pressed{
+	-fx-background-color: white;
 }
 
 .addBtn{
@@ -27,4 +55,12 @@
 
 .table-view .table-column{
 	-fx-alignment: CENTER;
+}
+
+.dialog-pane{
+	-fx-background-color: mainBackgroundColor;
+}
+
+.image-view{
+	-fx-image: url(icons/logo.png);
 }

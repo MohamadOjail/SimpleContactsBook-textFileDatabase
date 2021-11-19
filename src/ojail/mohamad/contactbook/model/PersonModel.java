@@ -4,55 +4,55 @@ import java.time.LocalDate;
 
 public class PersonModel {
 
-	public PersonModel(int iD, String firstName, String lastName, String telNumber, LocalDate birthDate) {
+	public PersonModel(int id, String firstName, String lastName, String telNumber, LocalDate birthDate) {
 		super();
-		ID = iD;
-		FirstName = firstName;
-		LastName = lastName;
-		TelNumber = telNumber;
-		BirthDate = birthDate;
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.telNumber = telNumber;
+		this.birthDate = birthDate;
 	}
 
-	private int ID;
-	private String FirstName;
-	private String LastName;
-	private String TelNumber;
-	private LocalDate BirthDate;
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String telNumber;
+	private LocalDate birthDate;
 
 	public String getFirstName() {
-		return FirstName;
+		return this.firstName;
 	}
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
-		return LastName;
+		return this.lastName;
 	}
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
 
 	public String getTelNumber() {
-		return TelNumber;
+		return this.telNumber;
 	}
 	public void setTelNumber(String telNumber) {
-		TelNumber = telNumber;
+		this.telNumber = telNumber;
 	}
 
 	public LocalDate getBirthDate() {
-		return BirthDate;
+		return this.birthDate;
 	}
 	public void setBirthDate(LocalDate birthDate) {
-		BirthDate = birthDate;
+		this.birthDate = birthDate;
 	}
 
 	public int getID() {
-		return ID;
+		return this.id;
 	}
 
 	public String getPersonData() {
-		return ID + "|" + FirstName + ";" + LastName + ":" + BirthDate + "." + TelNumber;
+		return id + "|" + firstName + ";" + lastName + ":" + birthDate + "." + telNumber;
 	}
 }
 
